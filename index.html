@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://edian.xtym.us.kg/E./E1.css">  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     </head>
+    <body>
+    <style>
+    body{   
+   background-image: url('http://edian.xtym.us.kg/E./E.png');
+    background-size: cover; /* 覆盖整个页面 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+ background-size: 350px 650px;
+             user-select: none; /* 禁止用户选中文本 */
+            -webkit-user-select: none; /* Chrome/Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE/Edge */
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  filter: blur(20px);
+  z-index: -1;
+}
+   .eapp{
+    font-size: 10px;
+    color: #7478FF;
+    z-index: 9;
+    }
+     .eapp1{
+    font-size: 10px;
+    color: #7478FF;
+    z-index: 10;
+    }
+    *{
+    padding: 0;
+    margin: 0;
+    }
+    .Eimg{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    position: absolute;  
+    top: 45px;
+    left: 45px;
+     transition: transform 2s ease;
+    }
+    .div1{
+    position: relative;
+    padding: 5px;
+    left: 6em;
+    top: 13em;
+    width: 10em;
+    height: 10em;
+    background-color: #FFE58B;
+    border-radius: 30px;
+    background-image: url("http://pan.jl8.top/view.php/a98bd22193cdcab4674d4785d255946a.mp4");
+    }
+    #p1{
+     position: absolute;  
+    left: 40%;
+    top: 40%;
+    }
+    #cancelButton{
+      position: absolute;  
+    left: 40%;
+    top: 45%;
+    background-color: #C5FFA2;
+    width: 10em;
+    height: 2em;
+    border: 0px;
+    border-radius: 10px;  
+    }  
+    .Eh{
+      position: absolute;  
+      left: 20px;
+      top: 8em;
+      font-size: 15px;
+      color: #4E7B8E;
+      }
+   
+     
+    
+    .a{
+     position: absolute; 
+      left: 50px;
+      top: 10em;
+      font-size: 15px;
+    }
+    a{
+       color: #0098FF;
+      text-decoration-color: #74D2FF;
+    }
+    .ep{
+    color: #838383;
+    position: absolute; 
+    bottom: 8px;
+    left: 28%;
+    }
+    .div3{
+     position: relative; 
+     left: 0px;
+     top: 20em;
+     width: 15em;
+     height: 3em;
+     background-color: #64889E;
+     border-radius: 0px 30px 30px 0px;
+     
+    }
+    #div3{
+  opacity: 0;
+  transition: opacity 1s ease-in-out; 
+  z-index: 10;
+    position: relative; 
+  }
+  #uptime{
+  z-index: 11;
+  }
+  .p2{
+    position: absolute; 
+  font-size: 15px;
+  left: 5px;
+  top: 15px;
+  color: #D1FFF3;
+  }
+    </style>
+  
+    <marquee class="eapp">
+   E.生活就要易点
+    <marquee class="eapp1">
+   E.提供服务
+    </marquee> 
+    </marquee> 
+     
+      
+    <div class="div1">
+   <img id="Eimg" class="Eimg" src="http://edian.xtym.us.kg/E./E.png">
+   <p class="Eh">进入E.<span>or</span><a href="https://www.123pan.com/s/RhoTTd-oqqjh.html">下载客户端</a></p>
+   <a class="a" href="a.html">联系作者</a>
+   
+     </div>
+    <div id="networkAlert" class="hidden">
+    <p id="p1">请检查网络后刷新界面</p>
+    <button id="cancelButton">好的</button>
+</div>
+<div id="div3" class="div3">
+<p class="p2">当前安全运行了:<span id="uptime"></span></p>
+</div>
+   <p class="ep">© 2024 E.生活就要易点</p>   
+<script src="http://edian.xtym.us.kg/E./E1.js"></script>
+   <script>
+   function fadeInPopup() {
+    $('#networkAlert')
+        .css('background', 'rgba(255, 255, 255, 1)')
+        .animate({ width: '100%', height: '100%' }, 2000);
+}
+      const startTime = new Date('2024-09-21T19:21:03');
+
+        function updateUptime() {
+            const now = new Date();
+            const uptimeMillis = now - startTime;
+            const uptimeDays = Math.floor(uptimeMillis / 86400000);
+            const uptimeHours = Math.floor((uptimeMillis % 86400000) / 3600000);
+            const uptimeMinutes = Math.floor((uptimeMillis % 3600000) / 60000);
+            const uptimeSeconds = Math.floor(((uptimeMillis % 3600000) % 60000) / 1000);
+
+            if (uptimeDays >= 7) {
+                document.getElementById('uptime').innerText = `${uptimeDays} 天, ${uptimeHours.toString().padStart(2, '0')}:${uptimeMinutes.toString().padStart(2, '0')}:${uptimeSeconds.toString().padStart(2, '0')}`;
+            } else if (uptimeDays > 0) {
+                document.getElementById('uptime').innerText = `${uptimeDays} day${uptimeDays > 1 ? 's' : ''}`;
+            } else {
+                document.getElementById('uptime').innerText = `${uptimeHours.toString().padStart(2, '0')}:${uptimeMinutes.toString().padStart(2, '0')}:${uptimeSeconds.toString().padStart(2, '0')}`;
+            }
+        }
+
+        // Initial update
+        updateUptime();
+        // Update every second
+        setInterval(updateUptime, 1000);
+        
+   </script>
+   <script src="http://edian.xtym.us.kg/E./div3.js" ></script>
+    </body>
+</html>
